@@ -115,6 +115,7 @@ type ATmplCacheType struct {
 	template    *pongo2.Template
 	when        int64 // when last used
 	whenModTime int64 // File sytem last modified
+	// xyzzy1000
 }
 
 type TmplCacheType struct {
@@ -148,6 +149,7 @@ func (tc *TmplCacheType) TmplCache(name string) (tpl *pongo2.Template, cMt int64
 	t.when = int64(time.Now().Unix()) // Update Timestamp of Use
 	tc.cache[name] = t
 	return t.template, t.whenModTime, nil
+	// xyzzy1000
 }
 
 func (tc *TmplCacheType) SaveInCache(name string, tpl *pongo2.Template, mTime int64) {
@@ -160,6 +162,7 @@ func (tc *TmplCacheType) SaveInCache(name string, tpl *pongo2.Template, mTime in
 		template:    tpl,
 		when:        time.Now().Unix(),
 		whenModTime: mTime, // Set Timestamp for 1st use
+		// xyzzy1000
 	}
 }
 
